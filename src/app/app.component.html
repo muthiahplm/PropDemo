@@ -34,16 +34,16 @@
   <!--fxFlex grow shrink basis-->
   <div class="page-content" fxFlex="1 0 auto">
 
-    <div class="router-content" *ngIf="!(observable$ | async)">
+    <div class="router-content" >
 
       <router-outlet></router-outlet>
     </div>
-    <div *ngIf="(observable$ | async)">
-      <mat-progress-spinner class="example-margin"
+    <div>
+      <!--<mat-progress-spinner class="example-margin"
                             [color]="primary"
                             [mode]="indeterminate"
                             [value]="50">
-      </mat-progress-spinner>
+      </mat-progress-spinner>-->
     </div>
 
   </div>

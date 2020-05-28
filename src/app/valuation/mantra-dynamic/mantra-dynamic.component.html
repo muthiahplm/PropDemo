@@ -15,7 +15,7 @@
       <mat-divider> </mat-divider>
 
       <val-mat-sel-list [mantraValues]="valMantra.finMantra" formControlName="finMantra"></val-mat-sel-list>-->
-      <div *ngFor="let subMantra of fg.controls.subMantras.controls; let i = index">
+      <div *ngFor="let subMantra of fg.controls.subMantras; let i = index">
 
     
         <val-mat-sel-list [subMantraForm]="subMantra"></val-mat-sel-list>

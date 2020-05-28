@@ -14,7 +14,7 @@
 
 
     <div formArrayName="mantraHeaderItems">
-      <mat-list-option *ngFor="let mantra of subMantraForm.controls.mantraHeaderItems.controls ;let i = index;" [value]="mantra">
+      <mat-list-option *ngFor="let mantra of subMantraForm.controls.mantraHeaderItems ;let i = index;" [value]="mantra">
         <div [formGroupName]="i">
           {{mantra.value.description}}
         </div>
