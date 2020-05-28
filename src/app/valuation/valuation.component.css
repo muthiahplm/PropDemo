@@ -1,0 +1,52 @@
+
+.val md-grid-list {
+  /*margin: 8px;*/ }
+
+.val .yellow {
+  background: #ffff8d; }
+
+.val .green {
+  background: #b9f6ca; }
+
+.val .blue {
+  background: #84ffff; }
+
+.val .purple {
+  background: #b388ff; }
+
+.val .red {
+  background: #ff8a80; }
+
+
+.val .gray {
+  background: #f5f5f5; }
+
+/*.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 60%;
+}*/
+
+
+
+.text-center-align {
+ vertical-align: text-top;
+}
+
+
+
+/*input.example-right-align {
+  -moz-appearance: textfield;
+}
+.internalMatGrid {
+    border: 1px solid Green;
+    min-width: 60%;
+   
+}*/
+
+.header-format{   min-width:20%;  text-align:left ;}
+
+

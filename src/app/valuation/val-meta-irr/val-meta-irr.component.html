@@ -1,0 +1,109 @@
+<form [formGroup]="metformGroup">
+  <div class="header-format"><H1>IRR :</H1> </div>
+  <div fxLayout.xl="row wrap" fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="center center">
+    <mat-form-field>
+
+      <input matInput placeholder="IRR" type="number" class="example-right-align" formControlName="irr">
+      <span matPrefix>%&nbsp;</span>
+      <span matSuffix>.00</span>
+    </mat-form-field>
+
+    <mat-form-field>
+
+      <input matInput placeholder="Holding Term " type="number" class="example-right-align" formControlName="noOfYear">
+
+
+    </mat-form-field>
+
+    <!--<mat-form-field>
+
+        <input matInput placeholder="Margin Of Safety " type="number" class="example-right-align" formControlName="mos">
+        <span matPrefix>%&nbsp;</span>
+        <span matSuffix>.00</span>
+    </mat-form-field>-->
+  </div>
+  <!--<mat-expansion-panel>
+      <mat-expansion-panel-header>
+          <mat-panel-title>
+              IRR
+          </mat-panel-title>
+          <mat-panel-description>
+              Metadata
+          </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div class="example-container">
+          <mat-form-field>
+
+              <input matInput placeholder="IRR" type="number" class="example-right-align" formControlName="irr">
+              <span matPrefix>%&nbsp;</span>
+              <span matSuffix>.00</span>
+          </mat-form-field>
+
+          <mat-form-field>
+
+              <input matInput placeholder="Holding Term " type="number" class="example-right-align" formControlName="noOfYear">
+
+
+          </mat-form-field>
+
+          <mat-form-field>
+
+              <input matInput placeholder="Margin Of Safety " type="number" class="example-right-align" formControlName="mos">
+              <span matPrefix>%&nbsp;</span>
+              <span matSuffix>.00</span>
+          </mat-form-field>
+      </div>-->
+  <!--</mat-expansion-panel>-->
+  <!--<div class="header-format"><H1>IRR :</H1> </div>
+  <div class='internalMatGrid'>
+      <mat-grid-list cols="3" rowHeight="9:1">
+
+          <mat-grid-tile>
+
+              <mat-form-field>
+
+                  <input matInput placeholder="IRR" type="number" class="example-right-align" formControlName="irr">
+                  <span matPrefix>%&nbsp;</span>
+                  <span matSuffix>.00</span>
+              </mat-form-field>
+
+          </mat-grid-tile>
+
+
+          <mat-grid-tile>
+
+              <mat-form-field>
+                  <input matInput placeholder="EV/EBIT" type="number" class="example-right-align" formControlName="evbt">
+                  <span matPrefix>$&nbsp;</span>
+                  <span matSuffix>.00</span>
+              </mat-form-field>
+
+          </mat-grid-tile>
+
+
+          <mat-grid-tile>
+              <mat-form-field>
+
+                  <input matInput placeholder="Margin Of Safety " type="number" class="example-right-align" formControlName="mos">
+                  <span matPrefix>%&nbsp;</span>
+                  <span matSuffix>.00</span>
+              </mat-form-field>
+          </mat-grid-tile>
+
+
+          <mat-grid-tile>
+
+              <mat-form-field>
+                  <input matInput placeholder="Current Equity" type="number" class="example-right-align" formControlName="ce">
+                  <span matPrefix>$&nbsp;</span>
+                  <span matSuffix>.00</span>
+              </mat-form-field>
+
+          </mat-grid-tile>
+
+      </mat-grid-list>
+  </div>-->
+</form>
+
+

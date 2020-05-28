@@ -1,0 +1,166 @@
+
+  <div fxLayout.xl="row" fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="center center"  fxFlexFill>
+    <div fxFlex="30">
+      <mat-form-field>
+        <input type="text" placeholder="Filter Symbol" aria-label="Number" matInput (keyup)="filterSym.next($event.target.value);">
+
+      </mat-form-field>
+    </div>
+    <div>
+      <button mat-raised-button color="primary" focusable="false" (click)="reload()">
+        Reload
+      </button>
+    </div>
+  </div>
+
+ 
+
+  <div fxLayout="column" fxLayoutAlign="start start" fxLayoutAlign.xl="center center" fxFlexFill>
+    <div class="internalMatGrid" >
+      <mat-table #table [dataSource]="dataSource" matSort matSortDirection="asc">
+
+        <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+        <!-- Number Column -->
+        <ng-container matColumnDef="sym">
+          <mat-header-cell *matHeaderCellDef>
+            <th>Symbol</th>
+
+
+          </mat-header-cell>
+          <mat-cell *matCellDef="let row">
+
+            <a mat-raised-button (click)="openBottomSheet(row)" [ngClass]="{'Strong Buy':'my-sb','Buy':'my-b','Hold':'my-h', 'Sell':'my-s',
+                  'Strong Sell':'my-ss'}[row.decision]">{{ row.sym }}</a>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="irr">
+          <mat-header-cell *matHeaderCellDef>IRR</mat-header-cell>
+
+          <mat-cell *matCellDef="let row">
+
+            <mat-form-field>
+              <input matInput type="number" class="example-right-align" [(ngModel)]="row.meta.irr">
+            </mat-form-field>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="noOfYear">
+          <mat-header-cell *matHeaderCellDef>Term</mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <mat-form-field>
+              <input matInput type="number" class="example-right-align" [(ngModel)]="row.meta.noOfYear">
+            </mat-form-field>
+
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="mos">
+          <mat-header-cell *matHeaderCellDef>MoS</mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <mat-form-field>
+              <input matInput type="number" class="example-right-align" [(ngModel)]="row.meta.mos">
+            </mat-form-field>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="eps">
+          <div style="width:5%">
+            <mat-header-cell *matHeaderCellDef>EPS</mat-header-cell>
+
+            <mat-cell *matCellDef="let row">
+
+              <mat-form-field>
+                <input matInput type="number" class="example-right-align" [(ngModel)]="row.eps">
+              </mat-form-field>
+
+            </mat-cell>
+          </div>
+        </ng-container>
+        <ng-container matColumnDef="futurePE">
+          <mat-header-cell *matHeaderCellDef>Future PE</mat-header-cell>
+          <mat-cell *matCellDef="let row">
+
+            <mat-form-field>
+              <input matInput type="number" class="example-right-align" [(ngModel)]="row.futurePE ">
+            </mat-form-field>
+
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="futureGrowth">
+          <mat-header-cell *matHeaderCellDef>Future Growth</mat-header-cell>
+          <mat-cell *matCellDef="let row">
+
+            <mat-form-field>
+              <input matInput type="text" class="example-right-align" [(ngModel)]="row.futureGrowth">
+            </mat-form-field>
+
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="currenttPrice">
+          <mat-header-cell *matHeaderCellDef>Current Price</mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <mat-form-field>
+              <input matInput type="text" class="example-right-align" [(ngModel)]="row.currenttPrice">
+            </mat-form-field>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="futurePrice">
+          <mat-header-cell *matHeaderCellDef>Future Price</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.futurePrice| valDecPipe}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="fairPrice">
+          <mat-header-cell *matHeaderCellDef>Fair Price</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.fairPrice | valDecPipe}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="finalPrice">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Final Price</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.finalPrice | valDecPipe }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="difference">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Diff</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.difference | valDecPipe }}%</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="decision">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Decision</mat-header-cell>
+          <mat-cell *matCellDef="let row" [ngClass]="{'Strong Buy':'my-sb','Buy':'my-b','Hold':'my-h', 'Sell':'my-s',
+                  'Strong Sell':'my-ss'}[row.decision]">{{ row.decision  }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="payBack">
+          <mat-header-cell *matHeaderCellDef>Pay Back </mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.payBack| valDecPipe}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actionsColumn">
+          <mat-header-cell *matHeaderCellDef>
+            Try
+          </mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <div style="width:50%">
+              <button mat-icon-button color="primary" focusable="false" (click)="reCalculateValuation(row)">
+                ReCal
+              </button>
+            </div>
+            <div style="width:30%">
+              <button mat-icon-button color="primary" focusable="false" (click)="showJsonVal(row)">
+                Jsn
+              </button>
+            </div>
+            <div>
+              <button mat-icon-button color="primary" focusable="false" (click)="showMantra(row)">
+                Mantra
+              </button>
+            </div>
+          </mat-cell>
+        </ng-container>+++++++++++++++++++++++++++++++++++
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'highlight': selectedSym === row.sym}" (click)="highlight(row)"></mat-row>
+      </mat-table>
+
+
+      <mat-paginator #pgntor [length]="resultsLength" [pageSize]="5" [pageSizeOptions]="[5, 10, 15]">
+      </mat-paginator>
+
+    </div>
+  </div>
+
+

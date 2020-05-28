@@ -1,0 +1,9 @@
+<div style="text-align: center; ">
+  <div style=" display: inline-block;">
+    <plm-ng-login (onLoginAttempt)="onLoginResult($event)"></plm-ng-login>
+  </div>
+  <div *ngIf="invalidLogin">
+    Invalid Login Attempt
+
+  </div>
+</div>

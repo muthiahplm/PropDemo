@@ -1,0 +1,27 @@
+<!--<mat-selection-list>
+  <H1 matSubheader>{{mantraValues.mantraHeader}}</H1>
+  <mat-list-option *ngFor="let mantra of mantraValues.mantraHeaderItems" [value]="mantra.value">
+    {{mantra.description}}
+  </mat-list-option>
+</mat-selection-list>-->
+
+<form [formGroup]="subMantraForm">
+
+
+  <mat-selection-list (selectionChange)="storeMantra($event.option.value)">
+
+    <H1 matSubheader>{{headerControlVal}}</H1>
+
+
+    <div formArrayName="mantraHeaderItems">
+      <mat-list-option *ngFor="let mantra of subMantraForm.controls.mantraHeaderItems.controls ;let i = index;" [value]="mantra">
+        <div [formGroupName]="i">
+          {{mantra.value.description}}
+        </div>
+      </mat-list-option>
+    </div>
+  </mat-selection-list>
+
+
+</form>
+

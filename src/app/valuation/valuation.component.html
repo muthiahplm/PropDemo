@@ -1,0 +1,55 @@
+<form [formGroup]="valFormGroup">
+  <div fxLayout="column"  >
+    -<mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Stock Valuation Input
+        </mat-panel-title>
+
+      </mat-expansion-panel-header>
+
+      <div class="val" fxLayout.xl="row wrap" fxLayout="column" >
+        <div fxLayout="column" fxLayoutGap="10px" class="yellow" fxFlex.xl="50" >
+
+          <div fxFlex="15">
+            <mat-form-field>
+              <input matInput placeholder="Symbol" type="text" class="example-right-align" formControlName="sym">
+
+            </mat-form-field>
+          </div>
+          <div fxFlex="15">
+            <mat-form-field>
+              <input matInput placeholder="Current Price" type="number" class="example-right-align" formControlName="cp">
+
+            </mat-form-field>
+          </div>
+          <div fxLayoutAlign="center center">
+            <val-eps></val-eps>
+          </div>
+        </div>
+        <div fxLayout="column" fxLayoutGap="10px" class="blue" fxFlex.xl="50" fxLayoutAlign="center center">
+          <val-growth></val-growth>
+        </div>
+      </div>
+
+      <div class="val" fxLayout.xl="row wrap" fxLayout="column">
+        <div fxLayout="column" fxLayoutGap="10px" class="purple" fxFlex.xl="50" fxLayoutAlign="center center">
+          <val-fundemental></val-fundemental>
+        </div>
+        <div fxLayout="column" fxLayoutGap="10px" class="gray" fxFlex.xl="50" fxLayoutAlign="center center">
+          <val-meta-irr></val-meta-irr>
+          <div fxFlex="25" fxLayoutAlign="end end">
+
+            <button mat-raised-button color="primary" (click)="calculateValuation()" [disabled]="!valFormGroup.valid">Calculate IntrinsicValue</button>
+          </div>
+
+        </div>
+      </div>
+
+    </mat-expansion-panel>
+
+    <div fxLayout="column"   >
+      <val-grid></val-grid>
+    </div>
+  </div>
+</form>

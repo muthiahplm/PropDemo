@@ -1,0 +1,29 @@
+<form [formGroup]="staticMantraFG">
+  <div class="page-content" fxLayout="column" fxLayoutAlign="center center">
+    <mat-card>
+      <mat-card-title>
+        Investing Mantra : 
+      </mat-card-title>
+
+
+      
+      <!--<val-mat-list [mantraValues]="valMantra.longMantra"></val-mat-list>
+
+  <mat-divider> </mat-divider>
+
+  <val-mat-list [mantraValues]="valMantra.mgmtMantra"></val-mat-list>
+
+  <mat-divider> </mat-divider>
+
+  <val-mat-list [mantraValues]="valMantra.finMantra"></val-mat-list>-->
+
+      <div *ngFor="let subMantra of subMantras.controls; let i = index">
+    
+        <val-mat-list [subMantraForm]="subMantra"></val-mat-list>
+        <mat-divider> </mat-divider>
+
+
+      </div>
+    </mat-card>
+  </div>
+</form>

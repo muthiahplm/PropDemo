@@ -17,7 +17,12 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@val/*": [ "src/app/valuation/*" ],
+      "@shared/*": [ "src/app/shared/*" ],
+      "@app/*": [ "src/app/*" ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

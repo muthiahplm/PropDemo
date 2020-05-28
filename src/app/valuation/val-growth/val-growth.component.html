@@ -1,0 +1,66 @@
+<form [formGroup]="valGrowthForm" >
+    <div class="header-format"><H1>Growth :</H1> </div>
+    <div class='internalMatGrid'>
+      <div fxLayout.xl="row wrap" fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="center center" >
+
+        <mat-form-field fxFlex="10" >
+          <input matInput placeholder="Total Growth Year" type="number" class="example-right-align" formControlName="growthYear">
+        </mat-form-field>
+
+
+
+
+
+        <mat-form-field  fxFlex="25">
+          <input matInput placeholder="1st Yr Tot Equity" type="number" class="example-right-align" formControlName="firstYrGrowth">
+          <span matPrefix>$&nbsp;</span>
+          <span matSuffix>.00</span>
+        </mat-form-field>
+
+
+
+
+
+        <mat-form-field fxFlex="25">
+          <input matInput placeholder="Last Yr Tot Equity" type="number" class="example-right-align" formControlName="lastYrGrowth">
+          <span matPrefix>$&nbsp;</span>
+          <span matSuffix>.00</span>
+        </mat-form-field>
+
+
+
+
+      </div>
+      <div fxLayout.xl="row wrap" fxLayout="column" fxLayoutGap="20px"  fxLayoutAlign="center center" >
+        <mat-form-field>
+
+          <input matInput placeholder="Equity Growth CALC " type="number" class="example-right-align" disabled formControlName="calcGrowth">
+          <span matPrefix>%&nbsp;</span>
+          <span matSuffix>.00</span>
+        </mat-form-field>
+
+
+
+
+
+
+        <mat-form-field>
+          <input matInput placeholder="Analyst Growth " type="number" class="example-right-align" formControlName="analystGrowth">
+          <span matPrefix>%&nbsp;</span>
+          <span matSuffix>.00</span>
+        </mat-form-field>
+        </div>
+
+        <!--<mat-grid-tile [colspan]="2">
+
+
+
+        <button mat-fab color="primary" (click)="setGrowth()">Set</button>
+
+
+    </mat-grid-tile>-->
+
+
+      </div>
+</form>
+

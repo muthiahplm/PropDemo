@@ -5,7 +5,11 @@
   "projects": {
     "PropDemo": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:class": {
+          "spec": false
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",

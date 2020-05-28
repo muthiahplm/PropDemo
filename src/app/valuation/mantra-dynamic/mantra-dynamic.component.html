@@ -1,0 +1,34 @@
+<form [formGroup]="fg">
+  <div class="page-content" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <mat-card>
+      <mat-card-title>
+        Investing Mantra  for Ticker : {{ticker}}
+      </mat-card-title>
+
+
+      <!--<val-mat-sel-list [mantraValues]="valMantra.longMantra" formControlName="longMantra"></val-mat-sel-list>
+
+      <mat-divider> </mat-divider>
+
+      <val-mat-sel-list [mantraValues]="valMantra.mgmtMantra" formControlName="mgmtMantra"></val-mat-sel-list>
+
+      <mat-divider> </mat-divider>
+
+      <val-mat-sel-list [mantraValues]="valMantra.finMantra" formControlName="finMantra"></val-mat-sel-list>-->
+      <div *ngFor="let subMantra of fg.controls.subMantras.controls; let i = index">
+
+    
+        <val-mat-sel-list [subMantraForm]="subMantra"></val-mat-sel-list>
+  <mat-divider> </mat-divider>
+
+
+      </div>
+
+    </mat-card>
+    <div fxLayout="row" fxLayoutGap="10px">
+
+      <button mat-raised-button color="primary" (click)="onSubmit()">Save </button>
+      <button mat-raised-button color="basic" (click)="onCancel()">Cancel </button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,54 @@
+<form [formGroup]="fundmlFormGroup">
+    <div class="header-format"><H1>Fundemental :</H1> </div>
+    <div class='internalMatGrid'>
+      <div fxLayout.xl="row wrap" fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="center center">
+
+
+
+        <mat-form-field>
+          <input matInput placeholder="Debt/Equity" type="number" class="example-right-align" formControlName="de">
+          <span matPrefix>$&nbsp;</span>
+          <span matSuffix>.00</span>
+        </mat-form-field>
+
+
+
+
+
+
+        <mat-form-field>
+          <input matInput placeholder="EV/EBIT" type="number" class="example-right-align" formControlName="evbt">
+          <span matPrefix>$&nbsp;</span>
+          <span matSuffix>.00</span>
+        </mat-form-field>
+
+
+
+
+
+        <mat-form-field>
+
+          <input matInput placeholder="ROIC" type="number" class="example-right-align" formControlName="roic">
+          <span matPrefix>$&nbsp;</span>
+          <span matSuffix>.00</span>
+        </mat-form-field>
+
+
+
+
+
+        <mat-form-field>
+          <input matInput placeholder="Current Equity" type="number" class="example-right-align" formControlName="ce">
+          <span matPrefix>$&nbsp;</span>
+          <span matSuffix>.00</span>
+        </mat-form-field>
+    
+
+      <mat-form-field>
+        <input matInput placeholder="Pice/Sales" type="number" class="example-right-align" formControlName="ps">        
+        <span matSuffix>.00</span>
+      </mat-form-field>
+    </div>
+
+      </div>
+</form>

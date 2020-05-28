@@ -1,0 +1,12 @@
+<div >
+    
+        <textarea 
+                  [value]="data.valdata" #inputElement
+                  style="height:230px;width:400px"
+                  wrap="hard" disabled
+                  ></textarea>
+   
+
+</div>
+    <button (click)="copyInputMessage()" value="click to copy">Copy to clipboard</button>
+    <button mat-button (click)="onNoClick()">No Thanks</button>

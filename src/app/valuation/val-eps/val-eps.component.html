@@ -1,0 +1,67 @@
+<form [formGroup]="valEpsForm">
+  <div class="header-format"><H1>Profit :</H1> </div>
+  <div class="internalMatGrid">
+    <div fxLayout.xl="row" fxLayout="column" fxLayoutGap ="30px" fxLayoutGap.xl="150px" fxLayoutAlign="start center" fxFlexFill>
+
+      <!--<mat-grid-tile>
+
+      <mat-form-field>
+          <input matInput placeholder="Symbol" type="text" class="example-right-align" formControlName="sym">
+
+      </mat-form-field>
+
+  </mat-grid-tile>-->
+
+ 
+   
+        <mat-form-field fxFlex="15">
+          <input matInput placeholder="EPS" type="number" class="example-right-align" formControlName="eps">
+          <span matPrefix>$&nbsp;</span>
+          <span matSuffix>.00</span>
+        </mat-form-field>
+   
+
+
+
+    
+        <mat-form-field fxFlex="15">
+          <input matInput placeholder="52 Wk High PE" type="number" class="example-right-align" formControlName="hpe">
+
+          <span matSuffix>.00</span>
+        </mat-form-field>
+
+
+      
+
+
+        <mat-form-field fxFlex="15">
+          <input matInput placeholder="52 Wk Low PE" type="number" class="example-right-align" formControlName="lpe">
+
+          <span matSuffix>.00</span>
+        </mat-form-field>
+
+
+
+
+        <!--<mat-grid-tile>
+
+        <mat-form-field>
+
+            <input matInput placeholder="Avg PE CALC" type="number" class="example-right-align" disabled formControlName="ape">
+
+            <span matSuffix>.00</span>
+        </mat-form-field>
+
+    </mat-grid-tile>-->
+        <!--<mat-grid-tile>
+
+        <mat-form-field>
+            <input matInput placeholder="Growth  PE CALC" type="number" class="example-right-align" disabled formControlName="cpe">
+
+            <span matSuffix>.00</span>
+        </mat-form-field>
+
+    </mat-grid-tile>-->
+      </div>
+    </div>
+</form>

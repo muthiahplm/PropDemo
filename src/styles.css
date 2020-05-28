@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+.internalMatGrid {
+  border: 1px solid Green;
+  min-width: 50%;
+  margin-right: 8px;
+}
+
+.header-format{   min-width:10%;  text-align:left ;}
+
+
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.example-container > * {
+  width: 20%;
+}
+
+/*mat-form-field {
+    padding-right :  40px;
+}*/
+
+.example-right-align {
+  text-align: left;
+}
+
+.footer {
+  position: relative;
+  height: 38px;
+  width: 100%;
+  background-color: #333333;
+}
+
+p.copyright {
+  color: #fff;
+  line-height: 40px;
+  font-size: 0.7em;
+  bottom: 0;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+html, body {
+  width: 98%;
+  height: 98%;
+}

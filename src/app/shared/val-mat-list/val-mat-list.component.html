@@ -1,0 +1,19 @@
+<form [formGroup]="subMantraForm">
+
+  
+  <mat-list>
+
+    <H1 matSubheader>{{headerControlVal}}</H1>
+
+
+    <div formArrayName="mantraHeaderItems">
+      <mat-list-item *ngFor="let mantra of subMantraForm.controls.mantraHeaderItems.controls;let i = index;">
+        <div [formGroupName]="i">
+          {{mantra.value.description}}
+        </div>
+      </mat-list-item>
+    </div>
+  </mat-list>
+
+</form> 
+

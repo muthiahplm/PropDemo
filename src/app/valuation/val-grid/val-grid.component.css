@@ -1,0 +1,61 @@
+.customWidthClass{
+ width: 50%
+}
+
+.my-sb{
+   color:limegreen;
+}
+.my-b{
+   color:aquamarine;
+}
+.my-s{
+   color:orangered;
+}
+.my-h{
+   color:rosybrown;
+}
+.my-ss{
+    color:red
+}
+
+
+.highlight{
+  background: #42A948; /* green */
+}
+
+
+/*@media screen and (max-width: 960px) {
+  .mat-table {
+    border: 0;
+    vertical-align: middle
+  }
+
+    .mat-table caption {
+      font-size: 1em;
+    }
+
+    /*  Enable this to hide header
+  .mat-table .mat-header-cell {
+    
+    border: 10px solid;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  */
+    /*.mat-table .mat-row {
+      border-bottom: 5px solid #ddd;
+      display: block;
+    }
+    /*
+  .mat-table .mat-row:nth-child(even) {background: #CCC}
+  .mat-table .mat-row:nth-child(odd) {background: #FFF}
+  */
+   
+        /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
