@@ -13,7 +13,7 @@ import { GlobalModule } from './global.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoaderInterceptorService } from './loader-interceptor.service';
 import { fakeBackendProvider } from './fake-backend-interceptor.service';
-
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -39,6 +39,7 @@ import { fakeBackendProvider } from './fake-backend-interceptor.service';
     //  multi: true
     //},
     //fakeBackendProvider
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   
   bootstrap: [AppComponent]
